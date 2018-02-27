@@ -1,7 +1,15 @@
 
+# Hive 建立数据库 建表
+
+
+
 create database hive_1208; 
 
+
+
 use hive_1208;  
+
+
 
 
 CREATE TABLE td_log_analyze
@@ -26,12 +34,30 @@ STORED AS TEXTFILE;
 
 
 
-./bin/flume-ng agent -c conf -f conf/hive_1208.conf -n logAnalyzeAG -Dflume.root.logger=INFO,console
 
+
+
+
+# 把Hadoop中的日志数据添加到Hive中
 
 ALTER TABLE td_log_analyze ADD IF NOT EXISTS PARTITION (dt='2018-01-31_10') LOCATION '/hive/warehouse/hive_1208.db/td_log_analyze/2018-01-31_10/';  
 
 
+
+# 在Hive中查看日志数据
 show partitions td_log_analyze; 
 
-select * from td_log_analyze; 
+select * from td_log_analyze where host = '192.168.30.1';  
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+# 安装
+
+sudo apt-get install sasl2-bin libsasl2-2 libsasl2-dev libsasl2-modules
+
+sudo pip install sasl==0.2.1
+
+sudo pip install pyhive[hive]
+
+
+
+
+
+
+
+# 启动hive服务器端监听
+
+hiveserver2
+
+
+
+
+
+# python 查询 Hive 代码
+
+from pyhive import hive
+from TCLIService.ttypes import TOperationState
+
+if __name__ == '__main__':
+
+	cursor = hive.connect(host='localhost',port=10000, database='default').cursor()
+	cursor.execute('select * from t_hive')
+	print(cursor.fetchall())
