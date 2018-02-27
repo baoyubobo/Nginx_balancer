@@ -1,4 +1,4 @@
-# Nginx-Balance
+# Nginx_balancer
 
 
 
@@ -23,41 +23,57 @@
 * 克隆代码
 ``` 
 git clone https://github.com/baoyubobo/Nginx_balancer.git
-
 ```
 * 卸载 nginx
 ```
 sudo apt-get -y purge nginx-* nginx*
+
 sudo apt-get -y autoremove
 ```
 * 安装 tengine
 ```
 git submodule update --init --recursive
-cd resource/nginx/tengine
-sudo apt-get install -y build-essential libssl-dev libpcre3 libpcre3-dev zlib1g-dev
-sudo ./configure --user=www-data --group=www-data --prefix=/etc/nginx --sbin-path=/usr/sbin --error-log-path=/var/log/nginx/error.log --conf-path=/etc/nginx/nginx.conf --pid-path=/run/nginx.pid
-sudo make
-sudo make install
-sudo mkdir -p /etc/nginx/conf.d
 
+cd resource/nginx/tengine
+
+sudo apt-get install -y build-essential libssl-dev libpcre3 libpcre3-dev zlib1g-dev
+
+sudo ./configure --user=www-data --group=www-data --prefix=/etc/nginx --sbin-path=/usr/sbin --error-log-path=/var/log/nginx/error.log --
+
+conf-path=/etc/nginx/nginx.conf --pid-path=/run/nginx.pid
+
+sudo make
+
+sudo make install
+
+sudo mkdir -p /etc/nginx/conf.d
 ```
 
 * 安装依赖
 ```
 sudo apt-get install -y python-dev python-pip iptables libcurl4-openssl-dev
+
 sudo pip install -r requirements.txt  
 ```
 * 初始化数据库
 ```
 python manage.py makemigrations  
+
 python manage.py migrate  
 ```
 * 启动服务
 ```
 sudo python manage.py runserver 
-sudo nginx
 
+sudo nginx
 ```
+
+* 当完全安装好环境Hive环境和pyhive后，去掉下列代码中的注释（hive/views.py）
+```
+#from pyhive import hive
+#from TCLIService.ttypes import TOperationState
+```
+
 
 
 
