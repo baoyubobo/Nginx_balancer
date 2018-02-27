@@ -1,0 +1,284 @@
+{% extends "base.html" %} {% block content %} {% load custom_filter %}
+<div class="row"> 
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">查看访问量最大的用户</h3>
+            </div>
+                <div class="box-header with-border">
+                <p>详细：按用户的访问量由多到少排序显示，仅显示前十条结果。</p>
+            </div>
+            <div class="box-body">
+                <button type="button" class="btn btn-primary" onclick="get_hive_result_1()">查看</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="hive_result_1" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="proxy_logs_title_1">查看访问量最大的用户</h4><small id="proxy_logs_mtitle_1"></small>
+            </div>
+            <div class="modal-body">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_access_result_1" data-toggle="tab" id="a_access_result_1">外网用户</a></li>
+                        <li><a href="#tab_error_log_1" data-toggle="tab">内网用户</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_access_result_1">
+                            <textarea id="tail_outer_result_1" class="form-control" rows="20" readonly="readonly"></textarea>
+                        </div>
+                        <div class="tab-pane" id="tab_error_log_1">
+                            <textarea id="tail_inner_result_1" class="form-control" rows="20" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-primary">
+           <div class="box-header with-border">
+                <h3 class="box-title">查看访问量最大的用户222222</h3>
+            </div>
+                <div class="box-header with-border">
+                <p>详细：按用户的访问量由多到少排序显示，仅显示前十条结果2222222。</p>
+            </div>
+            <div class="box-body">
+                <button type="button" class="btn btn-primary" onclick="get_hive_result_2()">查看</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="hive_result_2" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="proxy_logs_title_2">查看访问量最大的用户</h4><small id="proxy_logs_mtitle_2"></small>
+            </div>
+            <div class="modal-body">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_access_result_2" data-toggle="tab" id="a_access_result_2">外网用户</a></li>
+                        <li><a href="#tab_error_log_2" data-toggle="tab">内网用户</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_access_result_2">
+                            <textarea id="tail_outer_result_2" class="form-control" rows="20" readonly="readonly"></textarea>
+                        </div>
+                        <div class="tab-pane" id="tab_error_log_2">
+                            <textarea id="tail_inner_result_2" class="form-control" rows="20" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+           <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">查看访问量最大的用户333333</h3>
+            </div>
+                <div class="box-header with-border">
+                <p>详细：按用户的访问量由多到少排序显示，仅显示前十条结果333333。</p>
+            </div>
+            <div class="box-body">
+                <button type="button" class="btn btn-primary" onclick="get_hive_result_3()">查看</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="hive_result_3" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="proxy_logs_title_3">Hive查询3</h4><small id="proxy_logs_mtitle_3"></small>
+            </div>
+            <div class="modal-body">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_access_result_3" data-toggle="tab" id="a_access_result_3">外网用户</a></li>
+                        <li><a href="#tab_error_log_3" data-toggle="tab">内网用户</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_access_result_3">
+                            <textarea id="tail_outer_result_3" class="form-control" rows="20" readonly="readonly"></textarea>
+                        </div>
+                        <div class="tab-pane" id="tab_error_log_3">
+                            <textarea id="tail_inner_result_3" class="form-control" rows="20" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% load staticfiles %}
+<script src="{% static "plugins/echarts/echarts.min.js" %}"></script>
+<script src="{% static "plugins/echarts/macarons.js" %}"></script>
+<script>
+$('#menu_dashboard').addClass('active')
+$('#menu_service').removeClass('active')
+$('#page_header').text('Hive查询')
+$('#page_header_descript').text('使用Hive进行大数据查询')
+$('#page_nav').text('Hive查询')
+$('#page_name').text('Hive查询')
+
+
+
+function get_hive_result_1() {
+        $('#a_access_result_1').trigger('click')
+        $("#tail_outer_result_1").empty()
+        $("#tail_inner_result_1").empty()
+
+        jQuery.ajax({
+            type: 'post',
+            url: '/hive/1/',
+            dataType: 'json',
+            success: function(p) {
+                if (p.flag == "Success") {
+            
+                    $('#tail_inner_result_1').append(p.result_body.inner)
+                    $('#tail_outer_result_1').append(p.result_body.outer)
+                    tailScroll($("#tail_inner_result_1"))
+                    tailScroll($("#tail_outer_result_1"))
+                  
+
+                    t = setTimeout(function() {
+                        get_hive_result_1();
+                    }, 3000)
+
+                } else if (p.flag == "Error") {
+                    $("#tail_outer_result_1").empty()
+                    $("#tail_inner_result_1").empty()
+                    clearTimeout(t)
+                    alert('查询失败！错误：' + p.context)
+                }
+
+                if (p.flag == "Error" && p.context == "AuthFailed") {
+                    alert('认证失败！请重新登录！')
+                    top.location = '/login/'
+                }
+            },
+        })
+
+        $('#hive_result_1').modal('show')
+    
+}
+
+
+function get_hive_result_2() {
+        $('#a_access_result_2').trigger('click')
+        $("#tail_outer_result_2").empty()
+        $("#tail_inner_result_2").empty()
+
+        jQuery.ajax({
+            type: 'post',
+            url: '/hive/2/',
+            dataType: 'json',
+            success: function(p) {
+                if (p.flag == "Success") {
+            
+                    $('#tail_inner_result_2').append(p.result_body.inner)
+                    $('#tail_outer_result_2').append(p.result_body.outer)
+                    tailScroll($("#tail_inner_result_2"))
+                    tailScroll($("#tail_outer_result_2"))
+                  
+
+                    t = setTimeout(function() {
+                        get_hive_result_2();
+                    }, 3000)
+
+                } else if (p.flag == "Error") {
+                    $("#tail_outer_result_2").empty()
+                    $("#tail_inner_result_2").empty()
+                    clearTimeout(t)
+                    alert('查询失败！错误：' + p.context)
+                }
+
+                if (p.flag == "Error" && p.context == "AuthFailed") {
+                    alert('认证失败！请重新登录！')
+                    top.location = '/login/'
+                }
+            },
+        })
+
+        $('#hive_result_2').modal('show')
+    
+}
+
+
+function get_hive_result_3() {
+
+        $('#a_access_result_3').trigger('click')
+        $("#tail_outer_result_3").empty()
+        $("#tail_inner_result_3").empty()
+
+        jQuery.ajax({
+            type: 'post',
+            url: '/hive/3/',
+            dataType: 'json',
+            success: function(p) {
+                if (p.flag == "Success") {
+            
+                    $('#tail_inner_result_3').append(p.result_body.inner)
+                    $('#tail_outer_result_3').append(p.result_body.outer)
+                    tailScroll($("#tail_inner_result_3"))
+                    tailScroll($("#tail_outer_result_3"))
+                  
+
+                    t = setTimeout(function() {
+                        get_hive_result_3();
+                    }, 3000)
+
+                } else if (p.flag == "Error") {
+                    $("#tail_outer_result_3").empty()
+                    $("#tail_inner_result_3").empty()
+                    clearTimeout(t)
+                    alert('查询失败！错误：' + p.context)
+                }
+
+                if (p.flag == "Error" && p.context == "AuthFailed") {
+                    alert('认证失败！请重新登录！')
+                    top.location = '/login/'
+                }
+            },
+        })
+
+        $('#hive_result_3').modal('show')
+    
+}
+</script>
+{% endblock %}
